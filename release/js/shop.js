@@ -17,46 +17,46 @@ for (var i=0; i<SHOP_COUNT; i++) {
 }
 
 // Cedar Village Shops
-shop[0].name = "Cedar Arms";
+shop[0].name = "ASIC Factory";
 shop[0].item[0] = {type:SHOP_WEAPON, value:2};
 shop[0].item[1] = {type:SHOP_WEAPON, value:3};
 shop[0].background = 3;
 
-shop[1].name = "Simmons Fine Clothier";
+shop[1].name = "Tethers Leathers";
 shop[1].item[0] = {type:SHOP_ARMOR, value:2};
 shop[1].item[1] = {type:SHOP_ARMOR, value:3};
 shop[1].background = 3;
 
-shop[2].name = "The Pilgrim Inn";
+shop[2].name = "Hackers Den";
 shop[2].item[0] = {type:SHOP_MESSAGE, msg1:"We saw dead walking", msg2:"from the Canal Boneyard."};
 shop[2].item[1] = {type:SHOP_ROOM, value:10};
 shop[2].background = 3;
 
-shop[3].name = "Sage Therel";
+shop[3].name = "Crypto Mart";
 shop[3].item[0] = {type:SHOP_MESSAGE, msg1:"Fire magic is effective", msg2:"against undead and bone."};
 shop[3].item[1] = {type:SHOP_SPELL, value:2};
 shop[3].background = 3;
 
-shop[4].name = "Woodsman";
+shop[4].name = "Counterparty";
 shop[4].item[1] = {type:SHOP_MESSAGE, msg1:"I'm staying right here", msg2:"until the sun comes back."};
 shop[4].background = 3;
 
-shop[5].name = "Stonegate Entrance";
+shop[5].name = "Untethered Lands";
 shop[5].item[0] = {type:SHOP_MESSAGE, msg1:"No one allowed in or", msg2:"out of the city."};
 shop[5].item[1] = {type:SHOP_MESSAGE, msg1:"(The demo ends here.", msg2:"Thanks for playing!)"};
 shop[5].background = 3;
 
-shop[6].name = "Thomas the Fence";
+shop[6].name = "NSA Office";
 shop[6].item[0] = {type:SHOP_MESSAGE, msg1:"Hack magic opens doors", msg2:"and harms automatons."};
 shop[6].item[1] = {type:SHOP_SPELL, value:3};
 shop[6].background = 3;
 
-shop[7].name = "Thieves Guild";
+shop[7].name = "Federal Reserve";
 shop[7].item[0] = {type:SHOP_MESSAGE, msg1:"For a small fee we can", msg2:"sneak you to Stonegate."};
 shop[7].item[1] = {type:SHOP_MESSAGE, msg1:"(Support indie devs!", msg2:"Full version soon!)"};
 shop[7].background = 3;
 
-shop[8].name = "A Nightmare";
+shop[8].name = "The Whitehouse";
 shop[8].item[0] = {type:SHOP_MESSAGE, msg1:"Darkness has overtaken", msg2:"the human realm."};
 shop[8].item[1] = {type:SHOP_MESSAGE, msg1:"The monastery is no", msg2:"longer safe."};
 shop[8].background = 2;
