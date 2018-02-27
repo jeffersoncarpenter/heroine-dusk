@@ -60,7 +60,7 @@ function info_init() {
   info.spells[3] = {name:"Hack", gold:500};
   info.spells[4] = {name:"LED", gold:2500};
   info.spells[5] = {name:"Freeze", gold:10000};
-  info.spells[6] = {name:"Reflect", gold:50000};
+  info.spells[6] = {name:"Fork Coin", gold:50000};
   
 } 
 

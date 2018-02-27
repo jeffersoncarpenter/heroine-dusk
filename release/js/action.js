@@ -14,7 +14,7 @@ var BUTTON_POS_FRY = {x:140, y:40, w:20, h:20};
 var BUTTON_POS_HACK = {x:120, y:60, w:20, h:20};
 var BUTTON_POS_LED = {x:140, y:60, w:20, h:20};
 var BUTTON_POS_FREEZE = {x:120, y:80, w:20, h:20};
-var BUTTON_POS_REFLECT = {x:140, y:80, w:20, h:20};
+var BUTTON_POS_FORK_COIN = {x:140, y:80, w:20, h:20};
 
 
 var action = new Object();
@@ -232,7 +232,7 @@ function action_logic_moveselect() {
     }
     else if (pressing.down && !input_lock.down) {
       if (avatar.spellbook >= 6) {
-        action.select_pos = BUTTON_POS_REFLECT;
+        action.select_pos = BUTTON_POS_FORK_COIN;
         input_lock.down = true;
         redraw = true;
         return;
@@ -250,7 +250,7 @@ function action_logic_moveselect() {
     }
     else if (pressing.right && !input_lock.right) {
       if (avatar.spellbook >= 6) {
-        action.select_pos = BUTTON_POS_REFLECT;
+        action.select_pos = BUTTON_POS_FORK_COIN;
         input_lock.right = true;
         redraw = true;
         return;
@@ -258,8 +258,8 @@ function action_logic_moveselect() {
     }
   }
 
-  // currently on the reflect button
-  else if (action.select_pos == BUTTON_POS_REFLECT) {
+  // currently on the fork coin button
+  else if (action.select_pos == BUTTON_POS_FORK_COIN) {
     if (pressing.up && !input_lock.up) {
       action.select_pos = BUTTON_POS_LED;
       input_lock.up = true;
@@ -295,7 +295,7 @@ function action_render() {
   if (avatar.spellbook >= 3) action_render_button(4, BUTTON_POS_HACK);
   if (avatar.spellbook >= 4) action_render_button(5, BUTTON_POS_LED);
   if (avatar.spellbook >= 5) action_render_button(6, BUTTON_POS_FREEZE);
-  if (avatar.spellbook >= 6) action_render_button(7, BUTTON_POS_REFLECT);
+  if (avatar.spellbook >= 6) action_render_button(7, BUTTON_POS_FORK_COIN);
 
   action_render_select(action.select_pos);
   
