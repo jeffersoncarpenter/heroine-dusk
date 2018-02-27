@@ -12,7 +12,7 @@ var BUTTON_POS_RUN = {x:140, y:20, w:20, h:20};
 var BUTTON_POS_HEAL = {x:120, y:40, w:20, h:20};
 var BUTTON_POS_FRY = {x:140, y:40, w:20, h:20};
 var BUTTON_POS_HACK = {x:120, y:60, w:20, h:20};
-var BUTTON_POS_LIGHT = {x:140, y:60, w:20, h:20};
+var BUTTON_POS_LED = {x:140, y:60, w:20, h:20};
 var BUTTON_POS_FREEZE = {x:120, y:80, w:20, h:20};
 var BUTTON_POS_REFLECT = {x:140, y:80, w:20, h:20};
 
@@ -182,7 +182,7 @@ function action_logic_moveselect() {
     }
     else if (pressing.down && !input_lock.down) {
       if (avatar.spellbook >= 4) {
-        action.select_pos = BUTTON_POS_LIGHT;
+        action.select_pos = BUTTON_POS_LED;
         input_lock.down = true;
         redraw = true;
         return;
@@ -200,7 +200,7 @@ function action_logic_moveselect() {
     }
     else if (pressing.right && !input_lock.right) {
       if (avatar.spellbook >= 4) {
-        action.select_pos = BUTTON_POS_LIGHT;
+        action.select_pos = BUTTON_POS_LED;
         input_lock.right = true;
         redraw = true;
         return;
@@ -216,8 +216,8 @@ function action_logic_moveselect() {
     }
   }
 
-  // currently on the light button
-  else if (action.select_pos == BUTTON_POS_LIGHT) {
+  // currently on the led button
+  else if (action.select_pos == BUTTON_POS_LED) {
     if (pressing.up && !input_lock.up) {
       action.select_pos = BUTTON_POS_FRY;
       input_lock.up = true;
@@ -261,7 +261,7 @@ function action_logic_moveselect() {
   // currently on the reflect button
   else if (action.select_pos == BUTTON_POS_REFLECT) {
     if (pressing.up && !input_lock.up) {
-      action.select_pos = BUTTON_POS_LIGHT;
+      action.select_pos = BUTTON_POS_LED;
       input_lock.up = true;
       redraw = true;
       return;
@@ -293,7 +293,7 @@ function action_render() {
   if (avatar.spellbook >= 1) action_render_button(2, BUTTON_POS_HEAL);
   if (avatar.spellbook >= 2) action_render_button(3, BUTTON_POS_FRY);
   if (avatar.spellbook >= 3) action_render_button(4, BUTTON_POS_HACK);
-  if (avatar.spellbook >= 4) action_render_button(5, BUTTON_POS_LIGHT);
+  if (avatar.spellbook >= 4) action_render_button(5, BUTTON_POS_LED);
   if (avatar.spellbook >= 5) action_render_button(6, BUTTON_POS_FREEZE);
   if (avatar.spellbook >= 6) action_render_button(7, BUTTON_POS_REFLECT);
 
