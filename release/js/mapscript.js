@@ -39,7 +39,7 @@ function mapscript_exec(map_id) {
       return false;
 
     case 2: // Monk Quarters
-      return mapscript_chest(1,1,"stick", "Wood Stick", 1);
+      return mapscript_chest(1,1,"stick", "Bcash Stick", 1);
 
     case 3: // Meditation Point
       return mapscript_chest(2,1,"heal", "Spellbook: Heal", 1);
@@ -167,7 +167,7 @@ function mapscript_grant_item(item, item_count) {
     // flag gold treasure for display while exploring    
     explore.gold_value = item_count;
   }
-  else if (item == "Wood Stick") {
+  else if (item == "Bcash Stick") {
     // only keep the stick if it's better than what you already have
     if (avatar.weapon == 0) avatar.weapon = 1;
     explore.treasure_id = 10;
