@@ -155,7 +155,7 @@ function bitfont_setcolor(color_id) {
 }
 
 /**
- * Note: contains logic specific to Heroine Dusk
+ * Note: contains logic specific to Hack & Hash
  */
 function bitfont_determinecolor() {
   if (!init_complete) bitfont_setcolor(FONT_WHITE);

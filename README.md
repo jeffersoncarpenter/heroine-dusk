@@ -1,8 +1,8 @@
-# Heroine Dusk™
+# Hack & Hash™
 
 Version 1.2
 
-Heroine Dusk™ is a basic dungeon crawl made using an old aesthetic. It began as my April OneGameAMonth project.
+Hack & Hash™ is a basic dungeon crawl made using an old aesthetic. It began as my April OneGameAMonth project.
 
 The game's world is set in a fantasy human realm where the sun has not returned in several days. Evil forces are using the safety of night to invade. You are a serf woman takes up arms to fight against the darkness.
 
@@ -20,33 +20,33 @@ The game is written in Javascript using HTML5 canvas. The art was created with B
 
 ## License
 
-* All of the visual art and code for Heroine Dusk was created by Clint Bellanger. http://clintbellanger.net
-* The code for Heroine Dusk is released under GPL v3, with later versions permitted.
-* The visual art for Heroine Dusk is released under CC-BY-SA 3.0, with later versions permitted.
+* All of the visual art and code for Hack & Hash was created by Clint Bellanger. http://clintbellanger.net
+* The code for Hack & Hash is released under GPL v3, with later versions permitted.
+* The visual art for Hack & Hash is released under CC-BY-SA 3.0, with later versions permitted.
 * The music is by Yubatake (CC-BY 3.0). http://opengameart.org/users/yubatake
 
 ## Attribution
 
-The copyright licenses above allow you to share Heroine Dusk. When making it available on other platforms, be sure to include the proper attribution.
+The copyright licenses above allow you to share Hack & Hash. When making it available on other platforms, be sure to include the proper attribution.
 
-Here is a suggested way to attribute Heroine Dusk (to fulfill the terms of Creative Commons attribution)
+Here is a suggested way to attribute Hack & Hash (to fulfill the terms of Creative Commons attribution)
 
-    Heroine Dusk is created by Clint Bellanger http://clintbellanger.net
-    Heroine Dusk features music by Yubatake http://opengameart.org/users/yubatake
+    Hack & Hash is created by Clint Bellanger http://clintbellanger.net
+    Hack & Hash features music by Yubatake http://opengameart.org/users/yubatake
 
 ## Trademark
 
-"Heroine Dusk" is a trademark name (™). The above copyright licenses do not grant you the use of this trademark. 
+"Hack & Hash" is a trademark name (™). The above copyright licenses do not grant you the use of this trademark. 
 
-Heroine Dusk refers to the game as I have created it. If you modify the game's content, it's acceptable to say your derivative work is based on Heroine Dusk but you may no longer call it "Heroine Dusk".
+Hack & Hash refers to the game as I have created it. If you modify the game's content, it's acceptable to say your derivative work is based on Hack & Hash but you may no longer call it "Hack & Hash".
 
-When making Heroine Dusk available (without game content modified and following the above copyright terms), do not use the "Heroine Dusk" trademark to mislead players into thinking yours is an official source of the game or that you are the game's creator.
+When making Hack & Hash available (without game content modified and following the above copyright terms), do not use the "Hack & Hash" trademark to mislead players into thinking yours is an official source of the game or that you are the game's creator.
 
-You may not use the "Heroine Dusk" logo or word mark for commercial or promotional purposes without my explicit permission.
+You may not use the "Hack & Hash" logo or word mark for commercial or promotional purposes without my explicit permission.
 
 I grant a commercial exception for critics and reviewers (including Let's Plays) who use the word and logo trademarks in the course of their criticism.
 
-The title screen image release/images/backgrounds/title.png contains the trademark Heroine Dusk block letters logo.
+The title screen image release/images/backgrounds/title.png contains the trademark Hack & Hash block letters logo.
 
 ## Thanks
 
