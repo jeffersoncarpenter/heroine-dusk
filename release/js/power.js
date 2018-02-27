@@ -141,24 +141,24 @@ function power_heal() {
   }
 }
 
-function power_burn() {
+function power_fry() {
   if (avatar.mp == 0) return;
   
-  combat.offense_action = "Burn!";
+  combat.offense_action = "Fry!";
   
   var atk_min = (info.weapons[avatar.weapon].atk_min + avatar.bonus_atk);
   var atk_max = (info.weapons[avatar.weapon].atk_max + avatar.bonus_atk);
   var attack_damage = Math.round(Math.random() * (atk_max - atk_min)) + atk_min;
   
-  // against undead, burn does 2x crit
+  // against undead, fry does 2x crit
   if (combat.enemy.category == ENEMY_CATEGORY_UNDEAD) {
     attack_damage += atk_max + atk_max;
   }
-  // against most creatures burn does 1x crit
+  // against most creatures fry does 1x crit
   else if (combat.enemy.category != ENEMY_CATEGORY_DEMON) {
     attack_damage += atk_max;
   }
-  // against demons, burn does regular weapon damage.
+  // against demons, fry does regular weapon damage.
 
   avatar.mp--;  
   sounds_play(SFX_FIRE);
@@ -190,20 +190,20 @@ function power_run() {
   }  
 }
 
-function power_map_burn() {
+function power_map_fry() {
   if (avatar.mp == 0) return;
-  var burn_target = false;
+  var fry_target = false;
 
-  // tile 16 (skull pile) burns into tile 5 (dungeon interior)
+  // tile 16 (skull pile) fries into tile 5 (dungeon interior)
   
-  // don't let the player waste mana if there is no nearby tile to burn
-  burn_target = burn_target || power_map_burntile(avatar.x+1, avatar.y);
-  burn_target = burn_target || power_map_burntile(avatar.x, avatar.y+1);
-  burn_target = burn_target || power_map_burntile(avatar.x-1, avatar.y);
-  burn_target = burn_target || power_map_burntile(avatar.x, avatar.y-1);
+  // don't let the player waste mana if there is no nearby tile to fry
+  fry_target = fry_target || power_map_frytile(avatar.x+1, avatar.y);
+  fry_target = fry_target || power_map_frytile(avatar.x, avatar.y+1);
+  fry_target = fry_target || power_map_frytile(avatar.x-1, avatar.y);
+  fry_target = fry_target || power_map_frytile(avatar.x, avatar.y-1);
 
-  if (burn_target) {
-    info.power_action = "Burn!";
+  if (fry_target) {
+    info.power_action = "Fry!";
     info.power_result = "Cleared Path!";
     avatar.mp--;
 	sounds_play(SFX_FIRE);
@@ -214,9 +214,9 @@ function power_map_burn() {
   }
 }
 
-function power_map_burntile(x, y) {
+function power_map_frytile(x, y) {
   if (mazemap_get_tile(x,y) == 16) {
-    burn_target = true;
+    fry_target = true;
     mazemap_set_tile(x,y,5);
     mapscript_bone_pile_save(x,y);
     return true;
@@ -249,9 +249,9 @@ function power_map_unlock() {
   if (avatar.mp == 0) return;
   var unlock_target = false;
 
-  // tile 16 (skull pile) burns into tile 5 (dungeon interior)
+  // tile 16 (skull pile) fries into tile 5 (dungeon interior)
   
-  // don't let the player waste mana if there is no nearby tile to burn
+  // don't let the player waste mana if there is no nearby tile to fry
   unlock_target = unlock_target || power_map_unlocktile(avatar.x+1, avatar.y);
   unlock_target = unlock_target || power_map_unlocktile(avatar.x, avatar.y+1);
   unlock_target = unlock_target || power_map_unlocktile(avatar.x-1, avatar.y);
@@ -283,7 +283,7 @@ function power_map_unlocktile(x, y) {
 
 // Enemy special powers
 
-// evil enemy version of burn
+// evil enemy version of fry
 function power_scorch() {
 
   combat.defense_action = "Scorch!";

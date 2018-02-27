@@ -199,7 +199,7 @@ function mapscript_grant_item(item, item_count) {
 
 function mapscript_bone_pile_save(x, y) {
 
-  // the player has just burned bones, lookup and save the status
+  // the player has just fried bones, lookup and save the status
   for (var i=0; i < mapscript.bone_piles.length; i++) {
     if (mazemap.current_id == mapscript.bone_piles[i].map_id &&
         x == mapscript.bone_piles[i].x &&
@@ -212,7 +212,7 @@ function mapscript_bone_pile_save(x, y) {
 
 function mapscript_bone_pile_load(map_id) {
 
-  // check all bones previously burned
+  // check all bones previously fried
   for (var i=0; i < mapscript.bone_piles.length; i++) {
     if (mapscript.bone_piles[i].map_id == map_id) {
     

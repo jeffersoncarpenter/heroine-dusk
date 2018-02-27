@@ -111,8 +111,8 @@ function combat_logic_input() {
     power_heal();
 	used_action = true;
   }
-  else if (action_checkuse(BUTTON_POS_BURN) && avatar.mp > 0 && avatar.spellbook >= 2) {
-    power_burn();
+  else if (action_checkuse(BUTTON_POS_FRY) && avatar.mp > 0 && avatar.spellbook >= 2) {
+    power_fry();
 	used_action = true;
   }
   else if (action_checkuse(BUTTON_POS_UNLOCK) && avatar.mp > 0 && avatar.spellbook >= 3 && combat.enemy.category == ENEMY_CATEGORY_AUTOMATON) {

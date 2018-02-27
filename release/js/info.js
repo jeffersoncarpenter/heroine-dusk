@@ -56,7 +56,7 @@ function info_init() {
   
   info.spells[0] = {name:"No Spell", gold:0};
   info.spells[1] = {name:"Heal", gold:0};
-  info.spells[2] = {name:"Burn", gold:100};
+  info.spells[2] = {name:"Fry", gold:100};
   info.spells[3] = {name:"Unlock", gold:500};
   info.spells[4] = {name:"Light", gold:2500};
   info.spells[5] = {name:"Freeze", gold:10000};
@@ -98,8 +98,8 @@ function info_logic() {
 	redraw = true;
   }
 
-  if (action_checkuse(BUTTON_POS_BURN) && avatar.mp > 0 && avatar.spellbook >= 2) {
-    power_map_burn();
+  if (action_checkuse(BUTTON_POS_FRY) && avatar.mp > 0 && avatar.spellbook >= 2) {
+    power_map_fry();
     redraw = true;
   }
   
