@@ -11,7 +11,7 @@ var BUTTON_POS_ATTACK = {x:120, y:20, w:20, h:20};
 var BUTTON_POS_RUN = {x:140, y:20, w:20, h:20};
 var BUTTON_POS_HEAL = {x:120, y:40, w:20, h:20};
 var BUTTON_POS_FRY = {x:140, y:40, w:20, h:20};
-var BUTTON_POS_UNLOCK = {x:120, y:60, w:20, h:20};
+var BUTTON_POS_HACK = {x:120, y:60, w:20, h:20};
 var BUTTON_POS_LIGHT = {x:140, y:60, w:20, h:20};
 var BUTTON_POS_FREEZE = {x:120, y:80, w:20, h:20};
 var BUTTON_POS_REFLECT = {x:140, y:80, w:20, h:20};
@@ -150,7 +150,7 @@ function action_logic_moveselect() {
     }
     else if (pressing.down && !input_lock.down) {
       if (avatar.spellbook >= 3) {
-        action.select_pos = BUTTON_POS_UNLOCK;
+        action.select_pos = BUTTON_POS_HACK;
         input_lock.down = true;
         redraw = true;
         return;
@@ -190,8 +190,8 @@ function action_logic_moveselect() {
     }
   }
 
-  // currently on the unlock button
-  else if (action.select_pos == BUTTON_POS_UNLOCK) {
+  // currently on the hack button
+  else if (action.select_pos == BUTTON_POS_HACK) {
     if (pressing.up && !input_lock.up) {
       action.select_pos = BUTTON_POS_HEAL;
       input_lock.up = true;
@@ -225,7 +225,7 @@ function action_logic_moveselect() {
       return;
     }
     else if (pressing.left && !input_lock.left) {
-      action.select_pos = BUTTON_POS_UNLOCK;
+      action.select_pos = BUTTON_POS_HACK;
       input_lock.left = true
       redraw = true;
       return;
@@ -243,7 +243,7 @@ function action_logic_moveselect() {
   // currently on the freeze button
   else if (action.select_pos == BUTTON_POS_FREEZE) {
     if (pressing.up && !input_lock.up) {
-      action.select_pos = BUTTON_POS_UNLOCK;
+      action.select_pos = BUTTON_POS_HACK;
       input_lock.up = true;
       redraw = true;
       return;
@@ -292,7 +292,7 @@ function action_render() {
   // show spells
   if (avatar.spellbook >= 1) action_render_button(2, BUTTON_POS_HEAL);
   if (avatar.spellbook >= 2) action_render_button(3, BUTTON_POS_FRY);
-  if (avatar.spellbook >= 3) action_render_button(4, BUTTON_POS_UNLOCK);
+  if (avatar.spellbook >= 3) action_render_button(4, BUTTON_POS_HACK);
   if (avatar.spellbook >= 4) action_render_button(5, BUTTON_POS_LIGHT);
   if (avatar.spellbook >= 5) action_render_button(6, BUTTON_POS_FREEZE);
   if (avatar.spellbook >= 6) action_render_button(7, BUTTON_POS_REFLECT);

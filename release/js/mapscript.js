@@ -225,7 +225,7 @@ function mapscript_bone_pile_load(map_id) {
 
 function mapscript_locked_door_save(x, y) {
 
-  // the player has just unlocked a door, lookup and save the status
+  // the player has just hacked a door, lookup and save the status
   for (var i=0; i < mapscript.locked_doors.length; i++) {
     if (mazemap.current_id == mapscript.locked_doors[i].map_id &&
         x == mapscript.locked_doors[i].x &&
@@ -238,7 +238,7 @@ function mapscript_locked_door_save(x, y) {
 
 function mapscript_locked_door_load(map_id) {
 
-  // check all doors previously unlocked
+  // check all doors previously hacked
   for (var i=0; i < mapscript.locked_doors.length; i++) {
     if (mapscript.locked_doors[i].map_id == map_id) {
     

@@ -224,15 +224,15 @@ function power_map_frytile(x, y) {
   return false;
 }
 
-function power_unlock() {
+function power_hack() {
   if (avatar.mp == 0) return;
-  combat.offense_action = "Unlock!";
+  combat.offense_action = "Hack!";
   
   var atk_min = (info.weapons[avatar.weapon].atk_min + avatar.bonus_atk);
   var atk_max = (info.weapons[avatar.weapon].atk_max + avatar.bonus_atk);
   var attack_damage = Math.round(Math.random() * (atk_max - atk_min)) + atk_min;
   
-  // unlock can only be cast against Automatons
+  // hack can only be cast against Automatons
   // so apply the full damage
   attack_damage += atk_max + atk_max;
 
@@ -241,28 +241,28 @@ function power_unlock() {
   combat.offense_result = attack_damage + " damage";
   
   combat.enemy_hurt = true;
-  sounds_play(SFX_UNLOCK);
+  sounds_play(SFX_HACK);
 
 }
 
-function power_map_unlock() {
+function power_map_hack() {
   if (avatar.mp == 0) return;
-  var unlock_target = false;
+  var hack_target = false;
 
   // tile 16 (skull pile) fries into tile 5 (dungeon interior)
   
   // don't let the player waste mana if there is no nearby tile to fry
-  unlock_target = unlock_target || power_map_unlocktile(avatar.x+1, avatar.y);
-  unlock_target = unlock_target || power_map_unlocktile(avatar.x, avatar.y+1);
-  unlock_target = unlock_target || power_map_unlocktile(avatar.x-1, avatar.y);
-  unlock_target = unlock_target || power_map_unlocktile(avatar.x, avatar.y-1);
+  hack_target = hack_target || power_map_hacktile(avatar.x+1, avatar.y);
+  hack_target = hack_target || power_map_hacktile(avatar.x, avatar.y+1);
+  hack_target = hack_target || power_map_hacktile(avatar.x-1, avatar.y);
+  hack_target = hack_target || power_map_hacktile(avatar.x, avatar.y-1);
 
-  if (unlock_target) {
-    info.power_action = "Unlock!";
+  if (hack_target) {
+    info.power_action = "Hack!";
     info.power_result = "Door Opened!";
     avatar.mp--;
     avatar_save();
-	sounds_play(SFX_UNLOCK);
+	sounds_play(SFX_HACK);
   }
   else {
     info.power_action = "(No Target)";
@@ -270,9 +270,9 @@ function power_map_unlock() {
   }
 }
 
-function power_map_unlocktile(x, y) {
+function power_map_hacktile(x, y) {
   if (mazemap_get_tile(x,y) == 18) {
-    unlock_target = true;
+    hack_target = true;
     mazemap_set_tile(x,y,3);
     mapscript_locked_door_save(x,y);
     return true;
