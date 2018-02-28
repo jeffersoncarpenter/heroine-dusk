@@ -135,10 +135,10 @@ function title_render() {
   
   for (var i=0; i<title.menu.length; i++) {
     if (title.menu_selector == i) {
-      bitfont_render("[ "+title.menu[i]+" ]", 80, 50+(i*title.text_h), JUSTIFY_CENTER);
+      bitfont_render("[ "+title.menu[i]+" ]", 80, 35+(i*title.text_h), JUSTIFY_CENTER);
     }
     else {
-      bitfont_render(title.menu[i], 80, 50+(i*title.text_h), JUSTIFY_CENTER);
+      bitfont_render(title.menu[i], 80, 35+(i*title.text_h), JUSTIFY_CENTER);
     }
   }
   
