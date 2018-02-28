@@ -6,14 +6,14 @@
 
 var ENEMY_COUNT = 8;
 
-var ENEMY_SHADOW_TENDRILS = 0;
-var ENEMY_IMP = 1;
-var ENEMY_SHADOW_SOUL = 2;
-var ENEMY_ZOMBIE = 3;
-var ENEMY_SKELETON = 4;
-var ENEMY_DRUID = 5;
-var ENEMY_MIMIC = 6;
-var ENEMY_DEATH_SPEAKER = 7;
+var ENEMY_GPU_OVERHEAT = 0;
+var ENEMY_BLACKHAT = 1;
+var ENEMY_51_PERCENT = 2;
+var ENEMY_MALWARE = 3;
+var ENEMY_LOST_SEED = 4;
+var ENEMY_SCAMCOIN = 5;
+var ENEMY_SHILL = 6;
+var ENEMY_STALE_BLOCK = 7;
 
 var ENEMY_CATEGORY_SHADOW = 0;
 var ENEMY_CATEGORY_DEMON = 1;
@@ -34,55 +34,55 @@ function enemy_init() {
   }
 
   // load enemy images
-  enemy.img[ENEMY_SHADOW_TENDRILS].src = "images/enemies/shadow_tendrils.png";
-  enemy.img[ENEMY_SHADOW_TENDRILS].onload = function() {enemy_onload();};
+  enemy.img[ENEMY_GPU_OVERHEAT].src = "images/enemies/gpu_overheat.png";
+  enemy.img[ENEMY_GPU_OVERHEAT].onload = function() {enemy_onload();};
 
-  enemy.img[ENEMY_IMP].src = "images/enemies/imp.png";
-  enemy.img[ENEMY_IMP].onload = function() {enemy_onload();};
+  enemy.img[ENEMY_BLACKHAT].src = "images/enemies/blackhat.png";
+  enemy.img[ENEMY_BLACKHAT].onload = function() {enemy_onload();};
 
-  enemy.img[ENEMY_SHADOW_SOUL].src = "images/enemies/shadow_soul.png";
-  enemy.img[ENEMY_SHADOW_SOUL].onload = function() {enemy_onload();};
+  enemy.img[ENEMY_51_PERCENT].src = "images/enemies/51_percent.png";
+  enemy.img[ENEMY_51_PERCENT].onload = function() {enemy_onload();};
 
-  enemy.img[ENEMY_ZOMBIE].src = "images/enemies/zombie.png";
-  enemy.img[ENEMY_ZOMBIE].onload = function() {enemy_onload();};
+  enemy.img[ENEMY_MALWARE].src = "images/enemies/malware.png";
+  enemy.img[ENEMY_MALWARE].onload = function() {enemy_onload();};
 
-  enemy.img[ENEMY_SKELETON].src = "images/enemies/skeleton.png";
-  enemy.img[ENEMY_SKELETON].onload = function() {enemy_onload();};
+  enemy.img[ENEMY_LOST_SEED].src = "images/enemies/lost_seed.png";
+  enemy.img[ENEMY_LOST_SEED].onload = function() {enemy_onload();};
 
-  enemy.img[ENEMY_DRUID].src = "images/enemies/druid.png";
-  enemy.img[ENEMY_DRUID].onload = function() {enemy_onload();}
+  enemy.img[ENEMY_SCAMCOIN].src = "images/enemies/scamcoin.png";
+  enemy.img[ENEMY_SCAMCOIN].onload = function() {enemy_onload();}
 
-  enemy.img[ENEMY_MIMIC].src = "images/enemies/mimic.png";
-  enemy.img[ENEMY_MIMIC].onload = function() {enemy_onload();}
+  enemy.img[ENEMY_SHILL].src = "images/enemies/shill.png";
+  enemy.img[ENEMY_SHILL].onload = function() {enemy_onload();}
 
-  enemy.img[ENEMY_DEATH_SPEAKER].src = "images/enemies/death_speaker.png";
-  enemy.img[ENEMY_DEATH_SPEAKER].onload = function() {enemy_onload();}
+  enemy.img[ENEMY_STALE_BLOCK].src = "images/enemies/stale_block.png";
+  enemy.img[ENEMY_STALE_BLOCK].onload = function() {enemy_onload();}
 
   // set enemy stats
 
-  enemy.stats[ENEMY_SHADOW_TENDRILS] = {name:"Shadow Tendrils", hp:6, atk_min:2, atk_max:5, gold_min:1, gold_max:2, category:ENEMY_CATEGORY_SHADOW};
-  enemy.stats[ENEMY_SHADOW_TENDRILS].powers = [ENEMY_POWER_ATTACK];
+  enemy.stats[ENEMY_GPU_OVERHEAT] = {name:"GPU Overheat", hp:6, atk_min:2, atk_max:5, gold_min:1, gold_max:2, category:ENEMY_CATEGORY_SHADOW};
+  enemy.stats[ENEMY_GPU_OVERHEAT].powers = [ENEMY_POWER_ATTACK];
 
-  enemy.stats[ENEMY_IMP] = {name:"Imp", hp:7, atk_min:2, atk_max:6, gold_min:1, gold_max:3, category:ENEMY_CATEGORY_DEMON};
-  enemy.stats[ENEMY_IMP].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_ATTACK, ENEMY_POWER_SCORCH];
+  enemy.stats[ENEMY_BLACKHAT] = {name:"Blackhat", hp:7, atk_min:2, atk_max:6, gold_min:1, gold_max:3, category:ENEMY_CATEGORY_DEMON};
+  enemy.stats[ENEMY_BLACKHAT].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_ATTACK, ENEMY_POWER_SCORCH];
 
-  enemy.stats[ENEMY_SHADOW_SOUL] = {name:"Shadow Soul", hp:8, atk_min:3, atk_max:8, gold_min:2, gold_max:4, category:ENEMY_CATEGORY_SHADOW};
-  enemy.stats[ENEMY_SHADOW_SOUL].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_ATTACK, ENEMY_POWER_MPDRAIN];
+  enemy.stats[ENEMY_51_PERCENT] = {name:"51 Percent", hp:8, atk_min:3, atk_max:8, gold_min:2, gold_max:4, category:ENEMY_CATEGORY_SHADOW};
+  enemy.stats[ENEMY_51_PERCENT].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_ATTACK, ENEMY_POWER_MPDRAIN];
 
-  enemy.stats[ENEMY_ZOMBIE] = {name:"Zombie", hp:12, atk_min:4, atk_max:10, gold_min:3, gold_max:6, category:ENEMY_CATEGORY_UNDEAD};
-  enemy.stats[ENEMY_ZOMBIE].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_ATTACK, ENEMY_POWER_HPDRAIN];
+  enemy.stats[ENEMY_MALWARE] = {name:"Malware", hp:12, atk_min:4, atk_max:10, gold_min:3, gold_max:6, category:ENEMY_CATEGORY_UNDEAD};
+  enemy.stats[ENEMY_MALWARE].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_ATTACK, ENEMY_POWER_HPDRAIN];
 
-  enemy.stats[ENEMY_SKELETON] = {name:"Skeleton", hp:18, atk_min:6, atk_max:12, gold_min:5, gold_max:8, category:ENEMY_CATEGORY_UNDEAD};
-  enemy.stats[ENEMY_SKELETON].powers = [ENEMY_POWER_ATTACK];
+  enemy.stats[ENEMY_LOST_SEED] = {name:"Lost Seed", hp:18, atk_min:6, atk_max:12, gold_min:5, gold_max:8, category:ENEMY_CATEGORY_UNDEAD};
+  enemy.stats[ENEMY_LOST_SEED].powers = [ENEMY_POWER_ATTACK];
 
-  enemy.stats[ENEMY_DRUID] = {name:"Druid", hp:16, atk_min:7, atk_max:14, gold_min:7, gold_max:12, category:ENEMY_CATEGORY_DEMON};
-  enemy.stats[ENEMY_DRUID].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_SCORCH, ENEMY_POWER_HPDRAIN, ENEMY_POWER_MPDRAIN];
+  enemy.stats[ENEMY_SCAMCOIN] = {name:"Scamcoin", hp:16, atk_min:7, atk_max:14, gold_min:7, gold_max:12, category:ENEMY_CATEGORY_DEMON};
+  enemy.stats[ENEMY_SCAMCOIN].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_SCORCH, ENEMY_POWER_HPDRAIN, ENEMY_POWER_MPDRAIN];
 
-  enemy.stats[ENEMY_MIMIC] = {name:"Mimic", hp:30, atk_min:10, atk_max:16, gold_min:16, gold_max:25, category:ENEMY_CATEGORY_AUTOMATON};
-  enemy.stats[ENEMY_MIMIC].powers = [ENEMY_POWER_ATTACK];
+  enemy.stats[ENEMY_SHILL] = {name:"Shill", hp:30, atk_min:10, atk_max:16, gold_min:16, gold_max:25, category:ENEMY_CATEGORY_AUTOMATON};
+  enemy.stats[ENEMY_SHILL].powers = [ENEMY_POWER_ATTACK];
 
-  enemy.stats[ENEMY_DEATH_SPEAKER] = {name:"Death Speaker", hp:84, atk_min:8, atk_max:15, gold_min:225, gold_max:275, category:ENEMY_CATEGORY_DEMON};
-  enemy.stats[ENEMY_DEATH_SPEAKER].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_SCORCH];
+  enemy.stats[ENEMY_STALE_BLOCK] = {name:"Stale Block", hp:84, atk_min:8, atk_max:15, gold_min:225, gold_max:275, category:ENEMY_CATEGORY_DEMON};
+  enemy.stats[ENEMY_STALE_BLOCK].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_SCORCH];
   
 }
 

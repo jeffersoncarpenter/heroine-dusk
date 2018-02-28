@@ -69,8 +69,8 @@ function mapscript_exec(map_id) {
     case 9: // Dead Walkways
       mapscript_bone_pile_load(9);
       boss_alter_map();
-      result = mapscript_enemy(4,9, ENEMY_MIMIC, "");
-      result = result || mapscript_enemy(11,5, ENEMY_DEATH_SPEAKER, "dspeak");
+      result = mapscript_enemy(4,9, ENEMY_SHILL, "");
+      result = result || mapscript_enemy(11,5, ENEMY_STALE_BLOCK, "dspeak");
       return result;
 
     case 10: // Trade Tunnel
@@ -79,8 +79,8 @@ function mapscript_exec(map_id) {
       
       result = mapscript_chest(11,2, "hp2", "Magic Emerald (HP Up)", 1);
       result = result || mapscript_chest(13,2, "g3", "Gold", 100);
-      result = result || mapscript_enemy(14,9, ENEMY_MIMIC, "");
-      result = result || mapscript_enemy(6,4, ENEMY_MIMIC, "");
+      result = result || mapscript_enemy(14,9, ENEMY_SHILL, "");
+      result = result || mapscript_enemy(6,4, ENEMY_SHILL, "");
 
       return result;
   }

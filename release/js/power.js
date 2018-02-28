@@ -56,7 +56,7 @@ function power_hero_attack() {
 function power_enemy(enemy_id) {
 
   // override for boss action
-  if (enemy_id == ENEMY_DEATH_SPEAKER) {
+  if (enemy_id == ENEMY_STALE_BLOCK) {
     boss_power();
     return;
   }

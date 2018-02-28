@@ -142,7 +142,7 @@ function tileset_init() {
   tileset.tile_img[18].onload = function() {tileset_onload();};
   tileset.walkable[18] = false;
   
-  tileset.tile_img[19].src = "images/tiles/death_speaker.png";
+  tileset.tile_img[19].src = "images/tiles/stale_block.png";
   tileset.tile_img[19].onload = function() {tileset_onload();};
   tileset.walkable[19] = true;
   
