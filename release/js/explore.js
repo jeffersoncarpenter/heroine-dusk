@@ -11,7 +11,7 @@ explore.message = "";
 
 // found items for rendering
 explore.treasure_id = 0;
-explore.gold_value = 0;
+explore.crypto_value = 0;
 
 /**
  * Exploration
@@ -120,18 +120,18 @@ function explore_render() {
   }
     
   // if there is treasure to display, put the message higher
-  if (explore.gold_value > 0 || explore.treasure_id > 0) {
+  if (explore.crypto_value > 0 || explore.treasure_id > 0) {
     bitfont_render(explore.message, 80, 70, JUSTIFY_CENTER);  
   }
   else {
     bitfont_render(explore.message, 80, 100, JUSTIFY_CENTER);    
   }
   
-  // if a map event has rewarded gold to the player
+  // if a map event has rewarded crypto to the player
   // display it on the ground here
-  if (explore.gold_value > 0) {
-    treasure_render_gold(explore.gold_value);
-    explore.gold_value = 0;    
+  if (explore.crypto_value > 0) {
+    treasure_render_crypto(explore.crypto_value);
+    explore.crypto_value = 0;    
   }
   
   // display treasure on the ground

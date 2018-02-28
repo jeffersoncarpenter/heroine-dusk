@@ -60,28 +60,28 @@ function enemy_init() {
 
   // set enemy stats
 
-  enemy.stats[ENEMY_GPU_OVERHEAT] = {name:"GPU Overheat", hp:6, atk_min:2, atk_max:5, gold_min:1, gold_max:2, category:ENEMY_CATEGORY_SHADOW};
+  enemy.stats[ENEMY_GPU_OVERHEAT] = {name:"GPU Overheat", hp:6, atk_min:2, atk_max:5, crypto_min:1, crypto_max:2, category:ENEMY_CATEGORY_SHADOW};
   enemy.stats[ENEMY_GPU_OVERHEAT].powers = [ENEMY_POWER_ATTACK];
 
-  enemy.stats[ENEMY_BLACKHAT] = {name:"Blackhat", hp:7, atk_min:2, atk_max:6, gold_min:1, gold_max:3, category:ENEMY_CATEGORY_DEMON};
+  enemy.stats[ENEMY_BLACKHAT] = {name:"Blackhat", hp:7, atk_min:2, atk_max:6, crypto_min:1, crypto_max:3, category:ENEMY_CATEGORY_DEMON};
   enemy.stats[ENEMY_BLACKHAT].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_ATTACK, ENEMY_POWER_SCORCH];
 
-  enemy.stats[ENEMY_51_PERCENT] = {name:"51 Percent", hp:8, atk_min:3, atk_max:8, gold_min:2, gold_max:4, category:ENEMY_CATEGORY_SHADOW};
+  enemy.stats[ENEMY_51_PERCENT] = {name:"51 Percent", hp:8, atk_min:3, atk_max:8, crypto_min:2, crypto_max:4, category:ENEMY_CATEGORY_SHADOW};
   enemy.stats[ENEMY_51_PERCENT].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_ATTACK, ENEMY_POWER_MPDRAIN];
 
-  enemy.stats[ENEMY_MALWARE] = {name:"Malware", hp:12, atk_min:4, atk_max:10, gold_min:3, gold_max:6, category:ENEMY_CATEGORY_UNDEAD};
+  enemy.stats[ENEMY_MALWARE] = {name:"Malware", hp:12, atk_min:4, atk_max:10, crypto_min:3, crypto_max:6, category:ENEMY_CATEGORY_UNDEAD};
   enemy.stats[ENEMY_MALWARE].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_ATTACK, ENEMY_POWER_HPDRAIN];
 
-  enemy.stats[ENEMY_LOST_SEED] = {name:"Lost Seed", hp:18, atk_min:6, atk_max:12, gold_min:5, gold_max:8, category:ENEMY_CATEGORY_UNDEAD};
+  enemy.stats[ENEMY_LOST_SEED] = {name:"Lost Seed", hp:18, atk_min:6, atk_max:12, crypto_min:5, crypto_max:8, category:ENEMY_CATEGORY_UNDEAD};
   enemy.stats[ENEMY_LOST_SEED].powers = [ENEMY_POWER_ATTACK];
 
-  enemy.stats[ENEMY_SCAMCOIN] = {name:"Scamcoin", hp:16, atk_min:7, atk_max:14, gold_min:7, gold_max:12, category:ENEMY_CATEGORY_DEMON};
+  enemy.stats[ENEMY_SCAMCOIN] = {name:"Scamcoin", hp:16, atk_min:7, atk_max:14, crypto_min:7, crypto_max:12, category:ENEMY_CATEGORY_DEMON};
   enemy.stats[ENEMY_SCAMCOIN].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_SCORCH, ENEMY_POWER_HPDRAIN, ENEMY_POWER_MPDRAIN];
 
-  enemy.stats[ENEMY_SHILL] = {name:"Shill", hp:30, atk_min:10, atk_max:16, gold_min:16, gold_max:25, category:ENEMY_CATEGORY_AUTOMATON};
+  enemy.stats[ENEMY_SHILL] = {name:"Shill", hp:30, atk_min:10, atk_max:16, crypto_min:16, crypto_max:25, category:ENEMY_CATEGORY_AUTOMATON};
   enemy.stats[ENEMY_SHILL].powers = [ENEMY_POWER_ATTACK];
 
-  enemy.stats[ENEMY_STALE_BLOCK] = {name:"Stale Block", hp:84, atk_min:8, atk_max:15, gold_min:225, gold_max:275, category:ENEMY_CATEGORY_DEMON};
+  enemy.stats[ENEMY_STALE_BLOCK] = {name:"Stale Block", hp:84, atk_min:8, atk_max:15, crypto_min:225, crypto_max:275, category:ENEMY_CATEGORY_DEMON};
   enemy.stats[ENEMY_STALE_BLOCK].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_SCORCH];
   
 }

@@ -149,9 +149,9 @@ function dialog_render() {
 
   bitfont_render(dialog.title, 80, 2, JUSTIFY_CENTER);
 
-  // only render gold if there is something for sale
+  // only render crypto if there is something for sale
   if (dialog.items_for_sale) {
-    info_render_gold();
+    info_render_crypto();
   }
 
   dialog_render_button(dialog.option[0].button, BUTTON_POS_OPT0);

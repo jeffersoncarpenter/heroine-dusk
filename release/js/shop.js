@@ -107,7 +107,7 @@ function shop_set_weapon(slot, weapon_id) {
   if (weapon_id == avatar.weapon) disable_reason = "(You own this)";
   else if (weapon_id < avatar.weapon) disable_reason = "(Yours is better)";
 
-  shop_set_buy(slot, info.weapons[weapon_id].name, info.weapons[weapon_id].gold, disable_reason);
+  shop_set_buy(slot, info.weapons[weapon_id].name, info.weapons[weapon_id].crypto, disable_reason);
 }
 
 function shop_set_armor(slot, armor_id) {
@@ -115,7 +115,7 @@ function shop_set_armor(slot, armor_id) {
   if (armor_id == avatar.armor) disable_reason = "(You own this)";
   else if (armor_id < avatar.armor) disable_reason = "(Yours is better)";
 
-  shop_set_buy(slot, info.armors[armor_id].name, info.armors[armor_id].gold, disable_reason);
+  shop_set_buy(slot, info.armors[armor_id].name, info.armors[armor_id].crypto, disable_reason);
 }
 
 function shop_set_spell(slot, spell_id) {
@@ -123,7 +123,7 @@ function shop_set_spell(slot, spell_id) {
   if (spell_id <= avatar.spellbook) disable_reason = "(You know this)";
   else if (spell_id > avatar.spellbook +1) disable_reason = "(Too advanced)";
   
-  shop_set_buy(slot, "Spellbook: " + info.spells[spell_id].name, info.spells[spell_id].gold, disable_reason); 
+  shop_set_buy(slot, "Spellbook: " + info.spells[spell_id].name, info.spells[spell_id].crypto, disable_reason); 
 }
 
 function shop_set_room(slot, room_cost) {
@@ -142,17 +142,17 @@ function shop_set_buy(slot, name, cost, disable_reason) {
 
   dialog.option[slot].msg1 = "Buy " + name;
 
-  // show the gold cost or the reason you can't
+  // show the crypto cost or the reason you can't
   if (disable_reason != "") {
     dialog.option[slot].msg2 = disable_reason;
   }
   else {
-    dialog.option[slot].msg2 = "for " + cost + " gold";
+    dialog.option[slot].msg2 = "for " + cost + " crypto";
   }
 
   // display the dialog button if the item can be purchased
   var can_buy = true;
-  if (avatar.gold < cost) can_buy = false;
+  if (avatar.crypto < cost) can_buy = false;
   if (disable_reason != "") can_buy = false;
 
   if (can_buy) {
@@ -162,7 +162,7 @@ function shop_set_buy(slot, name, cost, disable_reason) {
     dialog.option[slot].button = DIALOG_BUTTON_NONE;
   }
   
-  // used to determine whether to display current gold
+  // used to determine whether to display current crypto
   dialog.items_for_sale = true;
 }
 
@@ -203,10 +203,10 @@ function shop_act(shop_id, slot_id) {
 }
 
 function shop_buy_weapon(weapon_id) {
-  var cost = info.weapons[weapon_id].gold;
-  if (avatar.gold < cost) return;
+  var cost = info.weapons[weapon_id].crypto;
+  if (avatar.crypto < cost) return;
 
-  avatar.gold -= cost;
+  avatar.crypto -= cost;
   sounds_play(SFX_COIN);
   avatar.weapon = weapon_id;
   dialog.message = "Bought " + info.weapons[weapon_id].name;
@@ -216,10 +216,10 @@ function shop_buy_weapon(weapon_id) {
 }
 
 function shop_buy_armor(armor_id) {
-  var cost = info.armors[armor_id].gold;
-  if (avatar.gold < cost) return;
+  var cost = info.armors[armor_id].crypto;
+  if (avatar.crypto < cost) return;
 
-  avatar.gold -= cost;
+  avatar.crypto -= cost;
   sounds_play(SFX_COIN);
   avatar.armor = armor_id;
   dialog.message = "Bought " + info.armors[armor_id].name;
@@ -228,10 +228,10 @@ function shop_buy_armor(armor_id) {
 }
 
 function shop_buy_spell(spell_id) {
-  var cost = info.spells[spell_id].gold;
-  if (avatar.gold < cost) return;
+  var cost = info.spells[spell_id].crypto;
+  if (avatar.crypto < cost) return;
   
-  avatar.gold -= cost;
+  avatar.crypto -= cost;
   sounds_play(SFX_COIN);
   avatar.spellbook = spell_id;
   dialog.message = "Learned " + info.spells[spell_id].name;
@@ -240,9 +240,9 @@ function shop_buy_spell(spell_id) {
 }
 
 function shop_buy_room(cost) {
-  if (avatar.gold < cost) return;
+  if (avatar.crypto < cost) return;
   
-  avatar.gold -= cost;
+  avatar.crypto -= cost;
   sounds_play(SFX_COIN);
   dialog.message = "You have rested";
   

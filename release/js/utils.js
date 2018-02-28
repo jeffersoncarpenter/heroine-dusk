@@ -106,8 +106,8 @@ function stuck() {
 /**
  * Various cheats and debugging routines
  */
-function cheat_gold(gold_amt) {
-  avatar.gold += gold_amt;
+function cheat_crypto(crypto_amt) {
+  avatar.crypto += crypto_amt;
 }
 
 function cheat_weapon(weapon_id) {

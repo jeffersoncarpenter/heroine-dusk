@@ -36,31 +36,31 @@ function info_init() {
   info.button_img.src = "images/interface/info_button.png";
   info.button_img.onload = function() {info_button_onload();};
   
-  info.weapons[0] = {name:"Bare Fists",  atk_min:1,  atk_max:4,  gold:0};
-  info.weapons[1] = {name:"Bcash Stick", atk_min:2,  atk_max:6,  gold:0};
-  info.weapons[2] = {name:"Eth Knife",   atk_min:3,  atk_max:8,  gold:50};
-  info.weapons[3] = {name:"Doge Mace",   atk_min:4,  atk_max:10, gold:200};
-  info.weapons[4] = {name:"NEO Sword",   atk_min:5,  atk_max:12, gold:1000};
-  info.weapons[5] = {name:"LTC Hammer",  atk_min:6,  atk_max:14, gold:5000};
-  info.weapons[6] = {name:"IOTA Axe",    atk_min:7,  atk_max:16, gold:20000};
-  info.weapons[7] = {name:"BTC Sword",   atk_min:8,  atk_max:18, gold:100000};
+  info.weapons[0] = {name:"Bare Fists",  atk_min:1,  atk_max:4,  crypto:0};
+  info.weapons[1] = {name:"Bcash Stick", atk_min:2,  atk_max:6,  crypto:0};
+  info.weapons[2] = {name:"Eth Knife",   atk_min:3,  atk_max:8,  crypto:50};
+  info.weapons[3] = {name:"Doge Mace",   atk_min:4,  atk_max:10, crypto:200};
+  info.weapons[4] = {name:"NEO Sword",   atk_min:5,  atk_max:12, crypto:1000};
+  info.weapons[5] = {name:"LTC Hammer",  atk_min:6,  atk_max:14, crypto:5000};
+  info.weapons[6] = {name:"IOTA Axe",    atk_min:7,  atk_max:16, crypto:20000};
+  info.weapons[7] = {name:"BTC Sword",   atk_min:8,  atk_max:18, crypto:100000};
   
-  info.armors[0] = {name:"No Armor",      def:0,  gold:0};
-  info.armors[1] = {name:"Hoodie",        def:2,  gold:0};
-  info.armors[2] = {name:"SHA256 Cloak",  def:4,  gold:50};
-  info.armors[3] = {name:"Dash Duirass",  def:6,  gold:200};
-  info.armors[4] = {name:"Zcash Leather", def:8,  gold:1000};
-  info.armors[5] = {name:"Stellar Mail",  def:10, gold:5000};
-  info.armors[6] = {name:"Steem Armor",   def:12, gold:20000};
-  info.armors[7] = {name:"Satoshi Scale", def:14, gold:100000};
+  info.armors[0] = {name:"No Armor",      def:0,  crypto:0};
+  info.armors[1] = {name:"Hoodie",        def:2,  crypto:0};
+  info.armors[2] = {name:"SHA256 Cloak",  def:4,  crypto:50};
+  info.armors[3] = {name:"Dash Duirass",  def:6,  crypto:200};
+  info.armors[4] = {name:"Zcash Leather", def:8,  crypto:1000};
+  info.armors[5] = {name:"Stellar Mail",  def:10, crypto:5000};
+  info.armors[6] = {name:"Steem Armor",   def:12, crypto:20000};
+  info.armors[7] = {name:"Satoshi Scale", def:14, crypto:100000};
   
-  info.spells[0] = {name:"No Spell", gold:0};
-  info.spells[1] = {name:"Heal", gold:0};
-  info.spells[2] = {name:"Fry", gold:100};
-  info.spells[3] = {name:"Hack", gold:500};
-  info.spells[4] = {name:"LED", gold:2500};
-  info.spells[5] = {name:"Freeze", gold:10000};
-  info.spells[6] = {name:"Fork Coin", gold:50000};
+  info.spells[0] = {name:"No Spell", crypto:0};
+  info.spells[1] = {name:"Heal", crypto:0};
+  info.spells[2] = {name:"Fry", crypto:100};
+  info.spells[3] = {name:"Hack", crypto:500};
+  info.spells[4] = {name:"LED", crypto:2500};
+  info.spells[5] = {name:"Freeze", crypto:10000};
+  info.spells[6] = {name:"Fork Coin", crypto:50000};
   
 } 
 
@@ -131,7 +131,7 @@ function info_render() {
   info_render_button();
   info_render_itemlist();
   info_render_hpmp();
-  info_render_gold();
+  info_render_crypto();
   action_render();
   
   if (!info_render_messages()) {
@@ -195,8 +195,8 @@ function info_render_hpmp() {
   bitfont_render("MP " + avatar.mp + "/" + avatar.max_mp, 2, 110, JUSTIFY_LEFT); 
 }
 
-function info_render_gold() {
-  bitfont_render(avatar.gold + " Gold", 158, 110, JUSTIFY_RIGHT);
+function info_render_crypto() {
+  bitfont_render(avatar.crypto + " Crypto", 158, 110, JUSTIFY_RIGHT);
 }
 
 function info_render_button() {

@@ -48,7 +48,7 @@ function mapscript_exec(map_id) {
       return mapscript_chest(2,2,"hp1", "Magic Emerald (HP Up)", 1);
 
     case 5: // Cedar Village
-      return mapscript_chest(7,10,"g1", "Gold", 10);
+      return mapscript_chest(7,10,"g1", "Crypto", 10);
 
     case 6: // Zuruth Plains
       return mapscript_chest(9,4,"mp1", "Magic Sapphire (MP Up)", 1);
@@ -62,7 +62,7 @@ function mapscript_exec(map_id) {
       result = mapscript_haybale(11,9);
       result = result || mapscript_chest(3,2,"atk1", "Magic Ruby (Atk Up)", 1);
       result = result || mapscript_chest(3,12,"mp2", "Magic Sapphire (MP Up)", 1);
-      result = result || mapscript_chest(6,9, "g2", "Gold", 25);
+      result = result || mapscript_chest(6,9, "g2", "Crypto", 25);
 
       return result;
     
@@ -78,7 +78,7 @@ function mapscript_exec(map_id) {
       mapscript_bone_pile_load(10);
       
       result = mapscript_chest(11,2, "hp2", "Magic Emerald (HP Up)", 1);
-      result = result || mapscript_chest(13,2, "g3", "Gold", 100);
+      result = result || mapscript_chest(13,2, "g3", "Crypto", 100);
       result = result || mapscript_enemy(14,9, ENEMY_SHILL, "");
       result = result || mapscript_enemy(6,4, ENEMY_SHILL, "");
 
@@ -161,11 +161,11 @@ function mapscript_grant_item(item, item_count) {
     explore.message = "Found " + item_count + " " + item;
   }
 
-  if (item == "Gold") {
-    avatar.gold += item_count;
+  if (item == "Crypto") {
+    avatar.crypto += item_count;
 
-    // flag gold treasure for display while exploring    
-    explore.gold_value = item_count;
+    // flag crypto treasure for display while exploring    
+    explore.crypto_value = item_count;
   }
   else if (item == "Bcash Stick") {
     // only keep the stick if it's better than what you already have

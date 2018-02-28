@@ -51,7 +51,7 @@ function avatar_reset() {
   avatar.max_hp = 25;
   avatar.mp = 4;
   avatar.max_mp = 4;
-  avatar.gold = 0;
+  avatar.crypto = 0;
   avatar.bonus_atk = 0;
   avatar.bonus_def = 0;
   avatar.spellbook = 0;
@@ -77,8 +77,8 @@ function avatar_respawn() {
   avatar.hp = avatar.max_hp;
   avatar.mp = avatar.max_mp;
   
-  // cost of death: lose all gold
-  avatar.gold = 0;
+  // cost of death: lose all crypto
+  avatar.crypto = 0;
 }
 
 function avatar_explore() {

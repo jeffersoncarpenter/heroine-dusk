@@ -25,7 +25,7 @@ combat.offense_result = "";
 combat.defense_action = "";
 combat.defense_result = "";
 combat.reward_result = "";
-combat.gold_treasure = 0;
+combat.crypto_treasure = 0;
 
 combat.victory_status = "";
 combat.enemy_hurt = false;
@@ -257,15 +257,15 @@ function combat_clear_messages() {
 
 function combat_determine_reward() {
 
-  // for now, just gold rewards
-  var gold_min = enemy.stats[combat.enemy.type].gold_min;
-  var gold_max = enemy.stats[combat.enemy.type].gold_max;
+  // for now, just crypto rewards
+  var crypto_min = enemy.stats[combat.enemy.type].crypto_min;
+  var crypto_max = enemy.stats[combat.enemy.type].crypto_max;
   
-  var gold_reward = Math.round(Math.random() * (gold_max - gold_min)) + gold_min;
-  combat.reward_result = "+" + gold_reward + " Gold!";
+  var crypto_reward = Math.round(Math.random() * (crypto_max - crypto_min)) + crypto_min;
+  combat.reward_result = "+" + crypto_reward + " Crypto!";
   
-  avatar.gold += gold_reward;
-  combat.gold_treasure = gold_reward;
+  avatar.crypto += crypto_reward;
+  combat.crypto_treasure = crypto_reward;
   
   // if killed a named creature, remember
   if (combat.victory_status != "") {
@@ -344,8 +344,8 @@ function combat_render_victory() {
   info_render_hpmp();
   bitfont_render("Victory!", 80, 60, JUSTIFY_CENTER);
   bitfont_render(combat.reward_result, 80, 70, JUSTIFY_CENTER);
-  treasure_render_gold(combat.gold_treasure);
-  info_render_gold();
+  treasure_render_crypto(combat.crypto_treasure);
+  info_render_crypto();
 }
 
 function combat_render_defeat() {
@@ -355,7 +355,7 @@ function combat_render_defeat() {
   combat_render_defense_log();
   info_render_hpmp();
   bitfont_render("You are defeated...", 158, 100, JUSTIFY_RIGHT);
-  info_render_gold();
+  info_render_crypto();
 }
 
 function combat_render_offense_log() {
