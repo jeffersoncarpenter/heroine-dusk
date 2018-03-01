@@ -232,8 +232,7 @@ function power_hack() {
   var atk_max = (info.weapons[avatar.weapon].atk_max + avatar.bonus_atk);
   var attack_damage = Math.round(Math.random() * (atk_max - atk_min)) + atk_min;
   
-  // hack can only be cast against Automatons
-  // so apply the full damage
+  // hack can only be cast against Bots so apply the full damage
   attack_damage += atk_max + atk_max;
 
   avatar.mp--;  

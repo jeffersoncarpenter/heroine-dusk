@@ -47,7 +47,7 @@ shop[5].item[1] = {type:SHOP_MESSAGE, msg1:"(The demo ends here.", msg2:"Thanks 
 shop[5].background = 3;
 
 shop[6].name = "NSA Office";
-shop[6].item[0] = {type:SHOP_MESSAGE, msg1:"Hack magic opens doors", msg2:"and harms automatons."};
+shop[6].item[0] = {type:SHOP_MESSAGE, msg1:"Hack magic opens doors", msg2:"and harms bots."};
 shop[6].item[1] = {type:SHOP_SPELL, value:3};
 shop[6].background = 3;
 

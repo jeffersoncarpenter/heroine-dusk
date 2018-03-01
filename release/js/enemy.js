@@ -18,7 +18,7 @@ var ENEMY_STALE_BLOCK = 7;
 var ENEMY_CATEGORY_SHADOW = 0;
 var ENEMY_CATEGORY_DEMON = 1;
 var ENEMY_CATEGORY_UNDEAD = 2;
-var ENEMY_CATEGORY_AUTOMATON = 3;
+var ENEMY_CATEGORY_BOT = 3;
 
 var enemy = new Object();
 
@@ -78,7 +78,7 @@ function enemy_init() {
   enemy.stats[ENEMY_SCAMCOIN] = {name:"Scamcoin", hp:16, atk_min:7, atk_max:14, crypto_min:7, crypto_max:12, category:ENEMY_CATEGORY_DEMON};
   enemy.stats[ENEMY_SCAMCOIN].powers = [ENEMY_POWER_ATTACK, ENEMY_POWER_SCORCH, ENEMY_POWER_HPDRAIN, ENEMY_POWER_MPDRAIN];
 
-  enemy.stats[ENEMY_SHILL] = {name:"Shill", hp:30, atk_min:10, atk_max:16, crypto_min:16, crypto_max:25, category:ENEMY_CATEGORY_AUTOMATON};
+  enemy.stats[ENEMY_SHILL] = {name:"Shill", hp:30, atk_min:10, atk_max:16, crypto_min:16, crypto_max:25, category:ENEMY_CATEGORY_BOT};
   enemy.stats[ENEMY_SHILL].powers = [ENEMY_POWER_ATTACK];
 
   enemy.stats[ENEMY_STALE_BLOCK] = {name:"Stale Block", hp:84, atk_min:8, atk_max:15, crypto_min:225, crypto_max:275, category:ENEMY_CATEGORY_DEMON};
