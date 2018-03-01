@@ -4,6 +4,7 @@
  
 var TITLE_MENU_MAIN = 0;
 var TITLE_MENU_OPTIONS = 1;
+var TITLE_MENU_CREDITS = 2;
 
 var title = new Object();
 
@@ -23,6 +24,8 @@ function title_set_menu(id) {
     else title.menu[0] = "Start";
 
     title.menu[1] = "Options";
+
+    title.menu[2] = "Credits";
   }
   else if (id == TITLE_MENU_OPTIONS) {
     if (OPTIONS.animation) title.menu[0] = "Animations are on";
@@ -38,6 +41,12 @@ function title_set_menu(id) {
     else title.menu[3] = "Minimap is off";
     
     title.menu[4] = "Back";
+  }
+  else if (id == TITLE_MENU_CREDITS) {
+    title.menu[0] = "by Clint Bellanger 2013";
+    title.menu[1] = "music by Yubatake";
+    title.menu[2] = "Back";
+    title.menu_selector = title.menu.length - 1;
   }
 
   redraw = true;
@@ -88,6 +97,10 @@ function title_logic() {
     }
   }
 
+  if (title.menu_id == TITLE_MENU_CREDITS) {
+    title.menu_selector = title.menu.length - 1;
+  }
+
   if (title.menu_confirm == true) {
     if (title.menu_id == TITLE_MENU_MAIN) {
       if (title.menu_selector == 0) {
@@ -96,6 +109,9 @@ function title_logic() {
       }
       else if (title.menu_selector == 1) {
         title_set_menu(TITLE_MENU_OPTIONS);
+      }
+      else if (title.menu_selector == 2) {
+        title_set_menu(TITLE_MENU_CREDITS);
       }
     }
     else if (title.menu_id == TITLE_MENU_OPTIONS) {
@@ -121,6 +137,9 @@ function title_logic() {
       var json_save = JSON.stringify(OPTIONS);
       setCookie("options",json_save,90);
     }
+    else if (title.menu_id == TITLE_MENU_CREDITS) {
+      title_set_menu(TITLE_MENU_MAIN);
+    }
   }
 }
 
@@ -140,11 +159,6 @@ function title_render() {
     else {
       bitfont_render(title.menu[i], 80, 35+(i*title.text_h), JUSTIFY_CENTER);
     }
-  }
-  
-  if (title.menu_id == TITLE_MENU_MAIN) {
-    bitfont_render("by Clint Bellanger 2013", 80, 100, JUSTIFY_CENTER);
-    bitfont_render("ft. music by Yubatake", 80, 110, JUSTIFY_CENTER);
   }
 }
 
